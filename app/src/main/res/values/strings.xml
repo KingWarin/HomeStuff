@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Home Stuff</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_open_heizung">Heizung</string>
+    <string name="title_activity_add_heizung">Heizung eintragen</string>
+    <string name="title_activity_push_entries">Einträge</string>
+</resources>
