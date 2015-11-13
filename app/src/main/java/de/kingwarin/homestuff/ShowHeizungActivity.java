@@ -1,15 +1,16 @@
 package de.kingwarin.homestuff;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.NumberPicker;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,45 +20,23 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class AddHeizungActivity extends ActionBarActivity {
-    public final static String KUCHE = "stuff";
-    public final static String SZI = "stuff";
-    public final static String BAD = "stuff";
-    public final static String WOZI = "stuff";
-
-    private EditText kuche;
+public class ShowHeizungActivity extends AppCompatActivity {
+    private TextView result_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_heizung);
+        setContentView(R.layout.activity_show_heizung);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    public void pushEntries(View view) {
-        Intent intent = new Intent(this, PushEntriesActivity.class);
-        kuche = (EditText) findViewById(R.id.kuche);
-        String kuche_count = kuche.getText().toString();
-        intent.putExtra(KUCHE, kuche_count);
-        EditText szi = (EditText) findViewById(R.id.szi);
-        String szi_count = szi.getText().toString();
-        intent.putExtra(SZI, szi_count);
-        EditText bad = (EditText) findViewById(R.id.bad);
-        String bad_count = bad.getText().toString();
-        intent.putExtra(BAD, bad_count);
-        EditText wozi = (EditText) findViewById(R.id.wozi);
-        String wozi_count = wozi.getText().toString();
-        intent.putExtra(WOZI, wozi_count);
-//        startActivity(intent);
 
         String stringUrl = "http://www.kingwarin.de/homestuff/service.php?type=heater";
-
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
             new DownloadWebpageTask().execute(stringUrl);
         } else {
-            kuche.setText("No network connection available.");
+            result_view = (TextView) findViewById(R.id.service_results);
+            result_view.setText("No network connection available.");
         }
     }
 
@@ -76,7 +55,7 @@ public class AddHeizungActivity extends ActionBarActivity {
         // onPostExecute displays the results of the AsyncTask.
         @Override
         protected void onPostExecute(String result) {
-            kuche.setText(result);
+            result_view.setText(result);
         }
 
         private String downloadUrl(String myurl) throws IOException {

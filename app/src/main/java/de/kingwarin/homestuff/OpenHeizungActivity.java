@@ -18,4 +18,9 @@ public class OpenHeizungActivity extends ActionBarActivity {
         Intent intent = new Intent(this, AddHeizungActivity.class);
         startActivity(intent);
     }
+
+    public void showHeizung(View view) {
+        Intent intent = new Intent(this, ShowHeizungActivity.class);
+        startActivity(intent);
+    }
 }
