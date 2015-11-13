@@ -25,7 +25,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Wohnzimmer"
-        android:id="wozi"/>
+        android:id="@+id/wozi"/>
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Heizung an"
+        android:id="@+id/on"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

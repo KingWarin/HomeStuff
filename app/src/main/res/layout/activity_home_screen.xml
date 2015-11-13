@@ -7,15 +7,18 @@
 
     <TextView android:text="Was nun?"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="40dp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Heizung"
+        android:textSize="40dp"
         android:onClick="openHeizung" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Strom" />
+        android:text="Strom"
+        android:textSize="40dp" />
 </LinearLayout>

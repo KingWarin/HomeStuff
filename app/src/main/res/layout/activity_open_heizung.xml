@@ -10,9 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Werte Eintragen"
+        android:textSize="40dp"
         android:onClick="addHeizung"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Werte Anzeigen"/>
+        android:textSize="40dp"
+        android:text="Werte Anzeigen"
+        android:onClick="showHeizung"/>
 </LinearLayout>
