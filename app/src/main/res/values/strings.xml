@@ -4,4 +4,5 @@
     <string name="title_activity_open_heizung">Heizung</string>
     <string name="title_activity_add_heizung">Heizung eintragen</string>
     <string name="title_activity_push_entries">Einträge</string>
+    <string name="title_activity_show_heizung">Heizungsdaten</string>
 </resources>
