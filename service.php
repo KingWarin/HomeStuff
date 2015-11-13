@@ -2,7 +2,7 @@
     session_start();
     require("dbconnect.php");
 
-    if(isset($_SESSION['user']) && isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+//    if(isset($_SESSION['user']) && isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
         mysqli_query($con, 'SET CHARACTER SET utf8');
 
         if(isset($_GET['type']) && $_GET['type'] == 'heater') {
@@ -25,5 +25,6 @@
             // to the db
         }
 
-    }
+//    }
 ?>
+
