@@ -66,7 +66,7 @@ public class AddHeizungActivity extends ActionBarActivity {
     private void post_data(JSONObject json_data) {
         try {
             Intent intent;
-            URL url = new URL("http://www.kingwarin.de/homestuff/service.php");
+            URL url = new URL("my fancy target url");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(10000);
             conn.setConnectTimeout(15000);

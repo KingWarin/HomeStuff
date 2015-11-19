@@ -41,7 +41,7 @@ public class OpenHeizungActivity extends ActionBarActivity {
     }
 
     public void fetchHeaterData() {
-        String stringUrl = "http://www.kingwarin.de/homestuff/service.php?type=heater";
+        String stringUrl = "my fancy source url";
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
