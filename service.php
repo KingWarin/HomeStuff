@@ -20,8 +20,16 @@
         @mysqli_close($con);
     }
     elseif(isset($_POST['type']) && $_POST['type'] == 'new_heat_date' && isset($_POST['heat_data'])) {
-        //do stuff with the heat data... which means decode the json and push it
-        // to the db
+        $heat_data = $_POST['heat_data'];
+        $heat_data = json_decode($heat_data, true);
+        $bath = $heat_data['bath'];
+        $kitchen = $heat_data['kitchen'];
+        $bed = $heat_data['bed'];
+        $living = $heat_data['living'];
+        $on = $heat_data['on'];
+        $query = "INSERT INTO heater (id, date, bath, kitchen, bed, living, on) VALUES";
+        $query = $query."(NULL,NULL,'$bath','$kitchen','$bed','$living','$on')";
+        @mysqli_close($con);
     }
 
 ?>
