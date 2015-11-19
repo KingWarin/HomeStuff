@@ -47,8 +47,7 @@
         <activity
             android:name=".ShowHeizungActivity"
             android:label="@string/title_activity_show_heizung"
-            android:parentActivityName=".OpenHeizungActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:parentActivityName=".OpenHeizungActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="de.kingwarin.homestuff.OpenHeizungActivity" />
