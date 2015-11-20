@@ -48,7 +48,7 @@ public class ShowHeizungActivity extends ActionBarActivity {
                 LinearLayout new_line = new LinearLayout(this);
                 new_line.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT));
-                new_line.setOrientation(LinearLayout.VERTICAL);
+                new_line.setOrientation(LinearLayout.HORIZONTAL);
                 TextView bath_tv = createTextView("Bad", bath);
                 TextView kitchen_tv = createTextView("Küche", bath);
                 TextView bed_tv = createTextView("Schlafen", bath);
