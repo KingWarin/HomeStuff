@@ -14,9 +14,12 @@ import android.widget.NumberPicker;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
@@ -72,9 +75,15 @@ public class AddHeizungActivity extends ActionBarActivity {
             conn.setConnectTimeout(15000);
             conn.setRequestMethod("POST");
             conn.setDoOutput(true);
-            conn.addRequestProperty("type", "new_heat_date");
-            conn.addRequestProperty("heat_data", json_data.toString());
+            conn.addRequestProperty("Content-Type", "application/json");
+            conn.addRequestProperty("Accept", "application/json");
             conn.connect();
+
+            OutputStream os = conn.getOutputStream();
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
+            writer.write(json_data.toString());
+            writer.close();
+            os.close();
             int response = conn.getResponseCode();
             if (response == 200) {
                 intent = new Intent(this, OpenHeizungActivity.class);
