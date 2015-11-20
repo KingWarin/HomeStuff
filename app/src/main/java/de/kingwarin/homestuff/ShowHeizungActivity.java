@@ -11,7 +11,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class ShowHeizungActivity extends ActionBarActivity {
-    private TextView result_view;
     private String heater_data;
 
     private TextView createTextView(String desc, String value) {
@@ -66,7 +65,5 @@ public class ShowHeizungActivity extends ActionBarActivity {
         catch (Exception e) {
             e.printStackTrace();
         }
-        result_view = (TextView) findViewById(R.id.service_results);
-        result_view.setText(heater_data);
     }
 }
